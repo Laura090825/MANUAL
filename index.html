@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/images/Vite.jpg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Manual completo de Vue.js - Aprende el framework progresivo de JavaScript con ejemplos prácticos y guías detalladas." />
+    <meta name="keywords" content="Vue.js, JavaScript, Framework, Tutorial, Manual, Desarrollo Web, SPA, Componentes" />
+    <meta name="author" content="Manual Vue.js" />
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Manual Completo de Vue.js" />
+    <meta property="og:description" content="Guía completa y moderna para aprender Vue.js desde cero hasta nivel avanzado" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/images/VuejsGuide.jpg" />
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Manual Completo de Vue.js" />
+    <meta name="twitter:description" content="Aprende Vue.js con esta guía moderna y completa" />
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <title>Manual Completo de Vue.js - Framework Progresivo</title>
+    
+    <!-- Inline critical CSS for better performance -->
+    <style>
+      /* Critical CSS for initial render */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        overflow-x: hidden;
+      }
+      
+      #app {
+        min-height: 100vh;
+      }
+      
+      /* Loading spinner */
+      .loading-spinner {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 50px;
+        height: 50px;
+        border: 3px solid rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        border-top-color: #42b883;
+        animation: spin 1s ease-in-out infinite;
+        z-index: 9999;
+      }
+      
+      @keyframes spin {
+        to { transform: translate(-50%, -50%) rotate(360deg); }
+      }
+      
+      /* Hide loading spinner when Vue is loaded */
+      .vue-loaded .loading-spinner {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <!-- Loading spinner shown until Vue loads -->
+      <div class="loading-spinner"></div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+    
+    <!-- Add class when Vue is loaded -->
+    <script>
+      // Add loaded class when Vue mounts
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          document.body.classList.add('vue-loaded');
+        }, 100);
+      });
+    </script>
+  </body>
+</html>
